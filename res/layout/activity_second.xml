@@ -1,0 +1,96 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.game.xfhy.SecondActivity" >
+
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+         >
+         <TextView
+             android:textColor="#ffffff"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="@string/score"
+             android:textSize="20sp"
+             android:background="#bbada0"
+              />
+        <TextView 
+            android:textColor="#ffffff"
+            android:id="@+id/tvScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             android:textSize="20sp"
+             android:layout_weight="1"
+             android:background="#bbada0"
+            />
+        
+         <TextView
+            android:textColor="#ffffff"
+            android:background="#bbada0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bestscore"
+            android:textSize="20sp"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:textColor="#ffffff"
+            android:background="#bbada0"
+            android:id="@+id/tvBestScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </LinearLayout>
+    
+    <RelativeLayout
+        android:background="#bbada0"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+         >
+        
+        <Button
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffffff"
+        android:background="#c5b9af"
+        android:id="@+id/btnNewGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/newgame" />
+    </RelativeLayout>
+    
+     <!-- 可以让GridLayout铺满剩余的父级容器 -->
+    <!-- 自动以View,继承自GridLayout -->
+    <FrameLayout
+        android:id="@+id/gameContainer"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <com.game.xfhy.GameView
+            android:id="@+id/gameView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+        </com.game.xfhy.GameView>
+
+        <com.game.xfhy.AnimLayer
+            android:id="@+id/animLayer"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+        </com.game.xfhy.AnimLayer>
+    </FrameLayout>
+    
+    <TextView 
+        android:background="#bbada0"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:text="@string/more"
+        />
+    
+</LinearLayout>
